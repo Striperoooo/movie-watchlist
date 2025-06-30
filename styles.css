@@ -12,15 +12,15 @@
 body {
     font-family: 'Inter', sans-serif;
     color: white;
+    background-color: #121212;
 }
 
 
 /* header */
 header {
     position: relative;
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("images/header-banner-small.png");
+    background-color: transparent;
+    background-image: url("images/header-banner-small.png");
     background-size: cover;
     width: 100%;
     height: var(--header-height);
@@ -103,12 +103,6 @@ header a {
 
 /* main */
 main {
-    background-color: #121212;
-    height: calc(100vh - var(--header-height));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding: 2.5em 0;
 }
 
@@ -131,22 +125,40 @@ main {
         "... one two ... "
     ;
     gap: 1em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.movie-grid-container::after {
+    content: "";
+    grid-column: 2 / 4;
+    /* Spans from image column to text content column */
+    border-bottom: 1px solid #2E2E2F;
+    /* margin-top: 1em; */
 }
 
 .grid-one {
     grid-area: one;
-    border: 1px solid aquamarine;
+
 }
 
 .grid-two {
     grid-area: two;
-    border: 1px solid saddlebrown;
+
 }
 
 /* main movie */
 .poster-img {
-    width: 99px;
-    height: 147px;
+    width: 103px;
+    height: 150px;
+
+}
+
+.movie-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding-top: 0em;
 }
 
 .title-wrapper {
@@ -160,12 +172,6 @@ main {
     font-size: 1.125rem;
 }
 
-.rating-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 0.3em;
-}
-
 .fa-star {
     color: #FEC654;
     font-size: 0.6rem;
@@ -173,16 +179,20 @@ main {
 
 .rating-wrapper,
 .details-wrapper,
-.watchlist-btn,
+.add-watchlist-btn,
 .movie-description {
     font-weight: 400;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
 }
 
 .details-wrapper {
     display: flex;
     align-items: center;
     gap: 1em;
+}
+
+.genre {
+    font-size: 0.65rem;
 }
 
 .add-watchlist-btn {
@@ -201,8 +211,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
 }
 
 .fa-plus {
@@ -211,6 +221,7 @@ main {
 }
 
 .movie-description {
+    color: #A5A5A5;
     font-weight: 400;
     font-size: 0.875rem;
 }
