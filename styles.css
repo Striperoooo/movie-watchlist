@@ -122,3 +122,95 @@ main {
     width: 4.375em;
     height: 3.83em;
 }
+
+/* main grid */
+.movie-grid-container {
+    display: grid;
+    grid-template-columns: 1em auto auto 1em;
+    grid-template-areas:
+        "... one two ... "
+    ;
+    gap: 1em;
+}
+
+.grid-one {
+    grid-area: one;
+    border: 1px solid aquamarine;
+}
+
+.grid-two {
+    grid-area: two;
+    border: 1px solid saddlebrown;
+}
+
+/* main movie */
+.poster-img {
+    width: 99px;
+    height: 147px;
+}
+
+.title-wrapper {
+    display: flex;
+    gap: 0.4em;
+    align-items: center;
+}
+
+.movie-title {
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+.rating-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.fa-star {
+    color: #FEC654;
+    font-size: 0.6rem;
+}
+
+.rating-wrapper,
+.details-wrapper,
+.watchlist-btn,
+.movie-description {
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+
+.details-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.add-watchlist-btn {
+    background: none;
+    color: whitesmoke;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.icon-cirlce {
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+}
+
+.fa-plus {
+    font-weight: 800;
+    font-size: 0.6rem;
+}
+
+.movie-description {
+    font-weight: 400;
+    font-size: 0.875rem;
+}
