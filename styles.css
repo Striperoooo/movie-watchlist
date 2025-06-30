@@ -25,11 +25,13 @@ header {
     width: 100%;
     height: var(--header-height);
     color: white;
+    text-shadow: 1px 1px 2px #3b3b3b;
 }
 
 h1 {
     font-weight: 800;
     font-size: 1.7rem;
+
 }
 
 header a {
@@ -39,7 +41,7 @@ header a {
     font-size: 0.75rem;
 }
 
-.header-text-div {
+.header-text-wrapper {
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -103,4 +105,20 @@ header a {
 main {
     background-color: #121212;
     height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5em 0;
+}
+
+.exploring-wrapper {
+    text-align: center;
+    color: #2E2E2F;
+    font-weight: 700;
+}
+
+.exploring-wrapper img {
+    width: 4.375em;
+    height: 3.83em;
 }
