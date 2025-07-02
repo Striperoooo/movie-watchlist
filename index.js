@@ -24,7 +24,7 @@ function handleSearchInput(e) {
 }
 
 async function fetchSearchResult(searchTerm) {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=362af8a8&s=${searchTerm}`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=362af8a8&s=${searchTerm}`)
     const data = await response.json()
     console.log(data)
 
@@ -36,7 +36,7 @@ async function fetchSearchResult(searchTerm) {
         // Create array of promise for each movie
         const detailMovies = await Promise.all(
             filteredData.map(async movie => {
-                const detailRes = await fetch(`http://www.omdbapi.com/?apikey=362af8a8&i=${movie.imdbID}`)
+                const detailRes = await fetch(`https://www.omdbapi.com/?apikey=362af8a8&i=${movie.imdbID}`)
                 return await detailRes.json()
             })
         )

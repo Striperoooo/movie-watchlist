@@ -6,7 +6,7 @@ async function getMovies() {
     watchlist = watchlist.slice().reverse()
 
     const moviePromises = watchlist.map(async id => {
-        const res = await fetch(`http://www.omdbapi.com/?apikey=362af8a8&i=${id}`)
+        const res = await fetch(`https://www.omdbapi.com/?apikey=362af8a8&i=${id}`)
         return await res.json()
     })
 
