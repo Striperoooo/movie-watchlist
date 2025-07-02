@@ -4,6 +4,10 @@
 const searchForm = document.querySelector(".search-form")
 const mainEl = document.querySelector("main")
 
+// document.querySelector('.input-wrapper').addEventListener('click', function () {
+//     document.querySelector('.search-form input').focus()
+// })
+
 searchForm.addEventListener("submit", handleSearchInput)
 
 function handleSearchInput(e) {
