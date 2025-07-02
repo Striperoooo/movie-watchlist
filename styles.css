@@ -49,6 +49,10 @@ header a {
     padding: 0 1.5em;
 }
 
+.header-text-wrapper a:hover {
+    opacity: 0.8;
+}
+
 .search-form {
     position: absolute;
     bottom: 0;
@@ -104,6 +108,11 @@ header a {
     border-radius: 0 6px 6px 0;
     cursor: pointer;
     height: 100%;
+}
+
+.search-form button:hover,
+.search-form button:active {
+    opacity: 0.8;
 }
 
 /* main */
