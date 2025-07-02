@@ -58,3 +58,6 @@ A sleek and modern web app to search, discover, and save your favorite movies an
 - **Showcases modern front-end skills: Clean code, modular JS, and responsive design.**
 - **Demonstrates real-world API integration.**
 - **Focus on UX: Instant feedback, accessibility, and persistent data.**
+
+ ## License
+MIT
