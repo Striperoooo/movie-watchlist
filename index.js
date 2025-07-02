@@ -19,7 +19,7 @@ function handleSearchInput(e) {
     // Call fetchSearchResult
     fetchSearchResult(searchTerm)
 
-    searchInput.value = ""
+    // searchInput.value = ""
 
 }
 
@@ -56,9 +56,11 @@ function displaySearchResult(detailMovies) {
 
     if (detailMovies) {
         mainEl.innerHTML = ""
+        const watchlist = JSON.parse(localStorage.getItem('watchlist')) || []
 
         detailMovies.forEach(movie => {
-            const { Title, Year, Poster, Runtime, Genre, Plot, imdbRating } = movie
+            const { Title, Year, Poster, Runtime, Genre, Plot, imdbRating, imdbID } = movie
+            const inWatchlist = watchlist.includes(imdbID)
             mainEl.innerHTML += `
             <div class="movie-grid-container">
 
@@ -85,11 +87,13 @@ function displaySearchResult(detailMovies) {
                 <div class="details-wrapper">
                     <span class="length">${Runtime}</span>
                     <span class="genre">${Genre}</span>
-                    <button class="add-watchlist-btn">
-                        <span class="icon-cirlce">
-                            <i class="fa-solid fa-plus"></i>
-                        </span>
-                        Watchlist
+                    <button class="add-watchlist-btn btn-style" data-imdbid="${imdbID}" ${inWatchlist ? 'disabled' : ''}>
+                        ${!inWatchlist ? `
+                            <span class="icon-cirlce">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                        ` : ''}
+                        ${inWatchlist ? 'Included in Watchlist' : 'Watchlist'}
                     </button>
                 </div>
 
@@ -99,6 +103,14 @@ function displaySearchResult(detailMovies) {
             </div>
             `
         })
+
+        document.querySelectorAll(".add-watchlist-btn").forEach((btn, idx) => {
+            btn.addEventListener("click", function () {
+                handleAddToWatchlist(detailMovies[idx].imdbID, btn)
+            })
+        })
+
+
     }
     else if (detailMovies === "") {
         mainEl.innerHTML = `
@@ -113,3 +125,15 @@ function displaySearchResult(detailMovies) {
     }
 
 }
+
+function handleAddToWatchlist(imdbID, btn) {
+    let watchlist = JSON.parse(localStorage.getItem('watchlist')) || []
+    if (!watchlist.includes(imdbID)) {
+        watchlist.push(imdbID)
+        localStorage.setItem('watchlist', JSON.stringify(watchlist))
+        btn.innerHTML = `Added to Watchlist`
+        btn.disabled = true
+    }
+}
+
+

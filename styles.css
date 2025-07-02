@@ -15,6 +15,14 @@ body {
     background-color: #121212;
 }
 
+.hidden {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 
 /* header */
 header {
@@ -35,7 +43,6 @@ h1 {
 }
 
 header a {
-    text-decoration: none;
     color: white;
     font-weight: 700;
     font-size: 0.75rem;
@@ -137,7 +144,8 @@ main {
     height: 3.83em;
 }
 
-.unable-search {
+.unable-search,
+.intro-watchlist {
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -148,6 +156,22 @@ main {
     font-size: 0.9rem;
     padding: 0 2em;
     position: absolute;
+}
+
+.intro-watchlist {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+
+}
+
+.align-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: white;
 }
 
 /* main grid */
@@ -234,13 +258,20 @@ main {
     font-size: 0.65rem;
 }
 
-.add-watchlist-btn {
+.btn-style {
     background: none;
     color: whitesmoke;
     border: none;
     display: flex;
     align-items: center;
     gap: 0.5em;
+    cursor: pointer;
+    font-size: 0.65rem;
+}
+
+.btn-style:hover,
+.btn-style:active {
+    opacity: 0.8;
 }
 
 .icon-cirlce {
