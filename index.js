@@ -99,6 +99,14 @@ function displaySearchResult(detailMovies) {
             </div>
             `
         })
+
+        document.querySelectorAll('.add-watchlist-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                handleAddToWatchlist(detailMovies[idx].imdbID)
+            })
+        })
+
+
     }
     else if (detailMovies === "") {
         mainEl.innerHTML = `
@@ -113,3 +121,14 @@ function displaySearchResult(detailMovies) {
     }
 
 }
+
+function handleAddToWatchlist(imdbID) {
+    let watchlist = JSON.parse(localStorage.getItem('watchlist')) || []
+    if (!watchlist.some(imdbID)) {
+        watchlist.push(imdbID)
+        localStorage.setItem('watchlist', JSON.stringify(watchlist))
+    }
+
+}
+
+
