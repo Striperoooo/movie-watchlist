@@ -22,7 +22,7 @@ A sleek and modern web app to search, discover, and save your favorite movies an
 
 ## 🚀 Demo
 
-> [[Live Demo]](https://grmoviewatchlist.netlify.app/)
+[Live Demo](https://grmoviewatchlist.netlify.app/)
 
 ---
 
